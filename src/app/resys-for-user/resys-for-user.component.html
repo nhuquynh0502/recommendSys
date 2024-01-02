@@ -1,0 +1,80 @@
+<div class="bg d-flex flex-column p-4">
+    <div class="d-flex flex-wrap w-100">
+        <!-- <app-search class="d-block flex-grow-1"></app-search> -->
+        <a href="/login" class="ml-auto"
+            style="font-size: 20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; text-decoration: none; font-weight: bold;">
+            Home</a>
+    </div>
+
+    <div class="bg-white-fade d-flex flex-column p-3">
+        <h4 class="mb-2 mt-1" style="font-size: 18px;">1. AutoRec-AutoEncoder</h4>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="autoRec?.length">
+            <slide *ngFor="let movie of autoRec; let index=index" style="height: 250px;">
+                <img src="{{movie.imgStr}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px; border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+
+        <h4 class="mb-2 mt-4" style="font-size: 18px;">2. Neural matrix factorization</h4>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="neuMF?.length">
+            <slide *ngFor="let movie of neuMF; let index=index" style="height: 250px;">
+                <img src="{{movie.imgStr}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px; border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+
+        <h4 class="mb-2 mt-4" style="font-size: 18px;">3. Matrix Factorization</h4>
+        <h6 class="mb-2 mt-2" style="font-size: 18px;">user-based</h6>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="matrixUsers?.length">
+            <slide *ngFor="let movie of matrixUsers; let index=index" style="height: 250px;">
+                <img src="{{movie.image}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px; border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+        <h6 class="mb-2 mt-2" style="font-size: 18px;">item-based</h6>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="matrixItems?.length">
+            <slide *ngFor="let movie of matrixItems; let index=index" style="height: 250px;">
+                <img src="{{movie.image}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px; border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+
+        <h4 class="mb-2 mt-4" style="font-size: 18px;">4. Collaborative Filtering (K-nearest neighbor)</h4>
+        <h6 class="mb-2 mt-2" style="font-size: 18px;">user-user</h6>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="knnUsers?.length">
+            <slide *ngFor="let movie of knnUsers; let index=index" style="height: 250px;">
+                <img src="{{movie.image}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px;  border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+        <h6 class="mb-2 mt-2" style="font-size: 18px;">item-item</h6>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="knnItems?.length">
+            <slide *ngFor="let movie of knnItems; let index=index" style="height: 250px;">
+                <img src="{{movie.image}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px;  border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+
+        <h4 class="mb-2 mt-4" style="font-size: 18px;">5. Content-Based Filtering</h4>
+        <carousel [itemsPerSlide]="7" [singleSlideOffset]="true" [interval]="0" [isAnimated]="true"
+            [showIndicators]="false" *ngIf="cbasedMovies?.length">
+            <slide *ngFor="let movie of cbasedMovies; let index=index" style="height: 250px;">
+                <img src="{{movie.imgStr}}" tooltip="{{movie.title}}" placement="bottom" container="body"
+                    alt="image slide" [routerLink]="['/resysformovie', movie.movie_id]"
+                    style="display: block; width: 100%; height:245px; border: 2px solid white; cursor: pointer;">
+            </slide>
+        </carousel>
+    </div>
+</div>

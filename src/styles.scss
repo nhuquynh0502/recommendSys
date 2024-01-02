@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    height: 100vh;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: unset;
+}

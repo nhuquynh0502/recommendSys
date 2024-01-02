@@ -1,0 +1,15 @@
+<div class="bg w-100 d-flex flex-column">
+    <h1 class="mt-5 w-100 text-center"
+        style="font-size: 45px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; font-weight: bold;">
+        Recommend System Application
+    </h1>
+    <div class="d-flex flex-wrap w-100 mt-5 bg-white opacity-75 justify-content-center align-items-start py-4 gap-4">
+        <ng-container *ngFor="let user of users">
+            <div class="d-flex flex-column align-items-center flex-shrink-1" routerLink="/resysforuser/{{user.id}}" role="button">
+                <img src="{{user.image}}" width="120px" height="120px" class="rounded-circle border border-5 border-dark">
+                <h4 class="mt-2 text-center" style="max-width: 120px; font-size: 17px;">{{user.name}}</h4>
+            </div>
+        </ng-container>
+        <img src="assets/images/plusicon.jpg" width="120px" height="120px" class="rounded-circle border border-5 border-dark">
+    </div>
+</div>

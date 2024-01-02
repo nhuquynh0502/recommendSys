@@ -1,0 +1,5 @@
+<input class="Search mb-4 form-control"
+        style="width: 800px; height: 30px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+        placeholder="Search" [(ngModel)]="selected" [typeahead]="moviesForSearch" container="body"
+        [typeaheadScrollable]="true" [typeaheadOptionsInScrollableView]="5" typeaheadOptionField="title"
+        (typeaheadOnSelect)="onSelect($event)">
